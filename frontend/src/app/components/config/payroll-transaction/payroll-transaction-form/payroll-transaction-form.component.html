@@ -1,0 +1,48 @@
+<div class="container">
+    <h1>Salary Disbusment</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="payrollPeriod">Payroll Period</label>
+                <input type="month" class="form-control" id="payrollPeriod" [(ngModel)]="payrollPeriod"
+                    (change)="fetchSalaryDetails()" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 ofset-md-1">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center">
+                        <th>ID</th>
+                        <th>Employee Name</th>
+                        <th>Work Days</th>
+                        <th>Holidays</th>
+                        <th>Working Hours</th>
+                        <th>Overtime Hours</th>
+                        <th>Gross Salary</th>
+                        <th>Deductions</th>
+                        <th>Net Salary</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of salaryDetails">
+                        <td>{{employee.employeeId}}</td>
+                        <td>{{employee.employeeName}}</td>
+                        <td>{{employee.totalWorkDays}}</td>
+                        <td>{{employee.totalHolidays}}</td>
+                        <td>{{employee.totalWorkingHours}}</td>
+                        <td>{{employee.totalOvertimeHours}}</td>
+                        <td>{{employee.totalSalary.toFixed(2)}}</td>
+                        <td>{{employee.deduction}}</td>
+                        <td>{{employee.netSalary.toFixed(2)}}</td>
+                        <td><button class="btn btn-primary btn-xs" (click)="disburse(employee)">Disburse</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

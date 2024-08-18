@@ -1,0 +1,30 @@
+<div class="calendar" [formGroup]="calendarForm">
+  <div [formGroup]="calendarForm" class="calendar__opts">
+    <select formControlName="month" id="calendar__month">
+      <option *ngFor="let m of monthNames; let i = index" [value]="i">{{ m }}</option>
+    </select>
+
+    <select formControlName="year" id="calendar__year">
+      <option *ngFor="let y of [2022, 2023, 2024, 2025, 2026]" [value]="y">{{ y }}</option>
+    </select>
+  </div>
+
+  <div class="calendar__body">
+    <div class="calendar__days">
+      <div *ngFor="let day of ['M', 'T', 'W', 'T', 'F', 'S', 'S']">{{ day }}</div>
+    </div>
+
+    <div class="calendar__dates">
+      <div *ngFor="let day of daysInMonth" [class.calendar__date]="true"
+        [class.calendar__date--grey]="!isCurrentMonth(day)" [class.calendar__date--selected]="isHoliday(day)"
+        (click)="selectHoliday(day)">
+        <span *ngIf="day">{{ day }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="calendar__buttons">
+    <button class="calendar__button calendar__button--grey">Back</button>
+    <button class="calendar__button calendar__button--primary" (click)="saveHolidaysToBackend()">Holidays</button>
+  </div>
+</div>

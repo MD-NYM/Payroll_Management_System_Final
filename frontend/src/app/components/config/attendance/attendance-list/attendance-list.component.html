@@ -1,0 +1,59 @@
+
+<div style="display: flex; justify-content: space-between;">
+    <h2>Attendance List</h2>
+    <!-- <button></button> -->
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+    <ng-container matColumnDef="employee">
+        <th mat-header-cell *matHeaderCellDef> Employee </th>
+        <td mat-cell *matCellDef="let element"> {{ element.employee.firstName }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="logDate">
+        <th mat-header-cell *matHeaderCellDef> logDate </th>
+        <td mat-cell *matCellDef="let element"> {{ element.logDate }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="present">
+        <th mat-header-cell *matHeaderCellDef> Is Present </th>
+        <td mat-cell *matCellDef="let element"> {{ element.present }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="remarks">
+        <th mat-header-cell *matHeaderCellDef> Remarks </th>
+        <td mat-cell *matCellDef="let element"> {{ element.remarks }} </td>
+    </ng-container>
+
+        <ng-container matColumnDef="overtime">
+        <th mat-header-cell *matHeaderCellDef> Is Overtime </th>
+        <td mat-cell *matCellDef="let element"> {{ element.overtime }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hoursWorked">
+        <th mat-header-cell *matHeaderCellDef> Hours Worked </th>
+        <td mat-cell *matCellDef="let element"> {{ element.hoursWorked }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef> location </th>
+        <td mat-cell *matCellDef="let element"> {{ element.location }} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let i = index;">
+            <button mat-icon-button color="warn" (click)="delete(i)">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" (click)="edit(i)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

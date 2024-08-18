@@ -1,0 +1,126 @@
+
+<div class="container">
+    <h1>Payment History Form</h1>
+    <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+
+        <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="employee">Employee</label>
+                <!-- <input type="text" class="form-control" id="employee" formControlName="employee"> -->
+                <select formControlName="employee">
+                  <option *ngFor="let employee of employees" [value]="employee.id">{{employee.firstName}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="paymentDate">Payment Date</label>
+                    <input type="date" class="form-control" id="paymentDate" formControlName="paymentDate">
+                    <!-- You would need to use a Bootstrap datepicker component here -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="paymentAmount">Payment Amount</label>
+                    <input type="number" class="form-control" id="paymentAmount" formControlName="paymentAmount">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <input type="text" class="form-control" id="paymentMethod" formControlName="paymentMethod">
+                    <!-- <select class="form-select" id="paymentMethod" formControlName="paymentMethod">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="paymentStatus">Payment Status</label>
+                    <input type="text" class="form-control" id="paymentStatus" formControlName="paymentStatus">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!-- <h1>Payment History Form</h1>
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <mat-grid-list cols="1" rowHeight="16:1">
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Employee</mat-label>
+                    <input matInput formControlName="employee" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>      
+        
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Payment Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="paymentDate">
+                 
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile> 
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Payment Amount</mat-label>
+                    <input matInput formControlName="paymentAmount" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>   
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Payment Method</mat-label>
+                    <input matInput formControlName="paymentMethod" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>   
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Payment Status</mat-label>
+                    <input matInput formControlName="paymentStatus" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>     
+
+
+
+    </mat-grid-list>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form> -->
+
+   <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->

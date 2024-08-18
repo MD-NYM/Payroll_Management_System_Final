@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <br>
+            <h1 class="text-center">Attendance Form</h1>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary me-2" type="button" (click)="onCheckIn()">Check In</button>
+                        <button class="btn btn-primary" type="button" (click)="onCheckOut()">Check Out</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="remarks">Remarks</label>
+                <textarea class="form-control" id="remarks" [(ngModel)]="remarks" rows="2"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

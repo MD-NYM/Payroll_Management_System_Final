@@ -1,0 +1,139 @@
+<div class="container">
+    <h1>Benefits Form</h1>
+    <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+
+        <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="employee">Employee</label>
+                <!-- <input type="text" class="form-control" id="employee" formControlName="employee"> -->
+                <select formControlName="employee">
+                  <option *ngFor="let employee of employees" [value]="employee.id">{{employee.firstName}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="benefitEnrollmentDate">Benefit Enrollment Date</label>
+                    <input type="date" class="form-control" id="benefitEnrollmentDate" formControlName="benefitEnrollmentDate">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="benefitendDate">Benefit End Date</label>
+                    <input type="date" class="form-control" id="benefitendDate" formControlName="benefitendDate">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="benefitType">Benefit Type</label>
+                    <input type="text" class="form-control" id="benefitType" formControlName="benefitType">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" formControlName="description">
+                    <!-- <textarea class="form-control" id="description" formControlName="description"></textarea> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="taxable">Taxable</label>
+                    <select class="form-select" id="taxable" formControlName="taxable">
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                      </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="frequency">Frequency</label>
+                    <input type="text" class="form-control" id="frequency" formControlName="frequency">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="benefitCost">Benefit Cost</label>
+                    <input type="number" class="form-control" id="benefitCost" formControlName="benefitCost">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<!-- <h1>Benefits Form</h1>
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <mat-grid-list cols="1" rowHeight="16:1">
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Employee</mat-label>
+                    <input matInput formControlName="employee" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>     
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Benefit Type</mat-label>
+                    <input matInput formControlName="benefitType" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile> 
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Benefit Cost</mat-label>
+                    <input matInput formControlName="benefitCost" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Benefit Enrollment Date</mat-label>
+                    <input matInput formControlName="benefitEnrollmentDate" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile> 
+
+    </mat-grid-list>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form> -->

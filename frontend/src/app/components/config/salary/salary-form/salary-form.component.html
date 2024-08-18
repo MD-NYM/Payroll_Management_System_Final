@@ -1,0 +1,113 @@
+<div class="container">
+    <h1>Salary Form</h1>
+    <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+
+        <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="employee">Employee</label>
+                <!-- <input type="text" class="form-control" id="employee" formControlName="employee"> -->
+                <select formControlName="employee">
+                  <option *ngFor="let employee of employees" [value]="employee.id">{{employee.firstName}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="salaryAmount">Salary Amount</label>
+                    <input type="number" class="form-control" id="salaryAmount" formControlName="salaryAmount">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="payFrequency">Pay Frequency</label>
+                    <input type="text" class="form-control" id="payFrequency" formControlName="payFrequency">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="deductions">Deductions</label>
+                    <input type="number" class="form-control" id="deductions" formControlName="deductions">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="bonuses">Bonuses</label>
+                    <input type="number" class="form-control" id="bonuses" formControlName="bonuses">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<!-- <h1>Position Form</h1>
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <mat-grid-list cols="1" rowHeight="16:1">
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Employee</mat-label>
+                    <input matInput formControlName="employee" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>     
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Salary Amount</mat-label>
+                    <input matInput formControlName="salaryAmount" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile> 
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Pay Frequency</mat-label>
+                    <input matInput formControlName="payFrequency" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile> 
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Deductions</mat-label>
+                    <input matInput formControlName="deductions" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile> 
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Bonuses</mat-label>
+                    <input matInput formControlName="bonuses" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile> 
+
+    </mat-grid-list>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form> -->
+

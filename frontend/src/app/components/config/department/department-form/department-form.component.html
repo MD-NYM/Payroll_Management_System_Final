@@ -1,0 +1,82 @@
+<div class="container">
+    <h1>Department Form</h1>
+    <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+
+
+        <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="departmentHead">Department Head</label>
+                <!-- <input type="text" class="form-control" id="employee" formControlName="employee"> -->
+                <select formControlName="departmentHead">
+                  <option *ngFor="let employee of departmentHeads" [value]="employee.id">{{employee.firstName}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="departmentName">Department Name</label>
+                    <input type="text" class="form-control" id="departmentName" formControlName="departmentName">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" formControlName="description">
+                    <!-- <textarea class="form-control" id="description" formControlName="description"></textarea> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location" formControlName="location">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<!-- <h1>Department Form</h1>
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <mat-grid-list cols="1" rowHeight="16:1">
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Department Name</mat-label>
+                    <input matInput formControlName="departmentName" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>     
+
+        <mat-grid-tile>
+            <div class="input-container">
+                <mat-form-field>
+                    <mat-label>Department Head</mat-label>
+                    <input matInput formControlName="departmentHead" />
+                </mat-form-field>
+            </div>
+        </mat-grid-tile> 
+
+    </mat-grid-list>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form> -->
